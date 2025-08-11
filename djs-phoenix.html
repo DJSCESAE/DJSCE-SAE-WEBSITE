@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Phoenix - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-phoenix {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        #hero-video-phoenix {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .phoenix-font {
+            font-family: 'Audiowide', cursive;
+        }
+        .animated-text-orange {
+            background: linear-gradient(90deg, #ff8c00, #ffa500, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-orange 5s ease infinite;
+        }
+        @keyframes gradient-animation-orange {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card, .department-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #ff8c00;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS PHOENIX.png" alt="DJS Phoenix Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 phoenix-font text-xl">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#departments" class="text-gray-300 hover:text-white transition">Departments</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-phoenix flex items-center justify-center text-center">
+        <video autoplay loop muted playsinline id="hero-video-phoenix">
+            <source src="videos/DJSPHOENIX.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider reveal phoenix-font">
+                TO THE SKY WE RISE... #BEYONDGRAVITY
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal phoenix-font">About DJS Phoenix</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS PHOENIX[1] (1)/WhatsApp Image 2023-06-22 at 7.31.47 PM.jpeg" alt="DJS Phoenix Team" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Phoenix';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Phoenix is the official drone team of Dwarkadas J. Sanghvi College of Engineering. We are a lively and passionate team of 51 innovators and dreamers united by our love for drones and aviation technology. At DJS Phoenix, we design, build, and rigorously test autonomous aerial systems, pushing the boundaries of UAV innovation every season.</p>
+                    <p class="text-gray-300 text-lg">Competing in esteemed national and international competitions such as COEX CopterHack, SAE Aerothon, AeroGCS, NIDAR, and the ISRO Robotics Challenge, we proudly represent our college on global platforms. With each passing year, we strive to dream bigger, innovate smarter, and set new benchmarks, building a legacy of excellence that inspires future engineers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal phoenix-font">Our Departments</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 phoenix-font">Aviation</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 phoenix-font">Electronics</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 phoenix-font">Coding</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 phoenix-font">Mechanical</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 phoenix-font">Marketing</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal phoenix-font">Our Achievements</h2>
+            </div>
+            <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievements will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal phoenix-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS PHOENIX[1] (1)/IMG-20250308-WA0012.jpg" alt="DJS Phoenix Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS PHOENIX[1] (1)/WhatsApp Image 2023-06-22 at 7.31.47 PM.jpeg" alt="DJS Phoenix Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS PHOENIX[1] (1)/WhatsApp Image 2025-05-31 at 00.08.20_0b022fc7.jpg" alt="DJS Phoenix Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS PHOENIX[1] (1)/WhatsApp Image 2025-05-31 at 00.10.04_f7cd36c5.jpg" alt="DJS Phoenix Gallery Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const achievementsData = [
+            { year: 'IDRL 2023 S7 E8 SVPCET', details: ['Secured 2nd position in (season 7 episode 8 ) Indian Drone Racing League.'] },
+            { year: 'COEX COPTERHACK 2023', details: ['Secured 6th position globally in COEX.', '1st in entire South Asia.'] },
+            { year: 'AEROGCS GLOBAL 2024', details: ['2nd runner up in AEROGCS GLOBAL competition(youngest and the only student team competing against experts and industry veterans).'] },
+            { year: 'SAE AEROTHON 2024', details: ['DJS PHOENIX secured AIR 2 out of 85 teams in the report presentation nationally.'] },
+            { year: 'DRONE DEXTERITY 2025', details: ['2nd place'] }
+        ];
+
+        function populateAchievements() {
+            const container = document.getElementById('achievements-grid');
+            achievementsData.forEach(item => {
+                const card = `
+                    <div class="achievement-card p-6 rounded-lg reveal">
+                        <h3 class="text-xl font-bold text-white mb-3 heading-font">${item.year}</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            ${item.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAchievements();
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

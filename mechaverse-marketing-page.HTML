@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechaverse 2025 - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-mechaverse {
+            position: relative;
+            overflow: hidden;
+        }
+        #mechaverse-hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This property ensures the video covers the area, cropping as little as possible */
+            z-index: -1;
+        }
+        .animated-text-blue {
+            background: linear-gradient(90deg, #2d9cff, #a47dff, #2d9cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-blue 5s ease infinite;
+        }
+        @keyframes gradient-animation-blue {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sponsor-logo {
+            transition: transform 0.3s ease;
+        }
+        .sponsor-logo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">MECHAVERSE <span class="animated-text-blue">2025</span></h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#why-us" class="text-gray-300 hover:text-white transition">Why Us</a>
+                <a href="#opportunities" class="text-gray-300 hover:text-white transition">Sponsor</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-mechaverse h-screen">
+        <video autoplay loop muted playsinline id="mechaverse-hero-video">
+            <source src="videos/mechaverse-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Written content and overlay removed as requested -->
+    </section>
+
+    <!-- About the Event -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">About The Event</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/mechaverse/about-event.jpg" alt="Mechaverse Event" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Mechaverse';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">MECHAVERSE is a flagship technical fest organized by the Department of Mechanical Engineering, open to students from all academic programs. It is a celebration of innovation, creativity, and everything related to the field of Mechanical Engineering.</p>
+                    <p class="text-gray-300 text-lg">After two successful editions, MECHAVERSE returns this year bigger and better than ever. Get ready for an exciting lineup of new events, along with the return of popular crowd favorites like Hi-Design, Automobile Quiz, the F1 Simulator, and the thrilling Murder Mystery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us? -->
+    <section id="why-us" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">Why Partner With Us?</h2>
+            </div>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-gray-300 text-xl mb-8 reveal">Partnering with SAE DJSCE means associating your brand with one of Mumbai's most reputed engineering colleges. Our SAE chapter represents a diverse pool of highly driven and technically skilled students who consistently excel in national and international competitions.</p>
+                <p class="text-gray-300 text-xl reveal">Your support not only fuels innovation but also aligns your brand with quality, performance, and excellence, providing high brand visibility and access to an elite talent pool of future industry leaders.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Past Events Gallery -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">Glimpses of Mechaverse 2024</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery1.jpg" alt=""></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery2.jpg" alt=""></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery3.jpg" alt=""></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery4.jpg" alt=""></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery5.jpg" alt=""></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery6.jpg" alt=""></div>
+                </div>
+                 <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery7.jpg" alt=""></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/mechaverse/gallery8.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Opportunities -->
+    <section id="opportunities" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">Partnership Opportunities</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">Join us in making Mechaverse 2025 a grand success. All deliverables are customizable to your requirements.</p>
+            </div>
+            <div class="overflow-x-auto reveal">
+                <table class="w-full text-sm text-left text-gray-400">
+                    <thead class="text-xs text-white uppercase bg-gray-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Deliverables</th>
+                            <th scope="col" class="px-6 py-3 text-center">Tier 1</th>
+                            <th scope="col" class="px-6 py-3 text-center">Tier 2</th>
+                            <th scope="col" class="px-6 py-3 text-center">Tier 3</th>
+                            <th scope="col" class="px-6 py-3 text-center">Tier 4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Title Sponsor</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center"></td>
+                            <td class="px-6 py-4 text-center"></td>
+                            <td class="px-6 py-4 text-center"></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Student Database</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center"></td>
+                            <td class="px-6 py-4 text-center"></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Standees</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center"></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Logo on Posters & Certificates</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                        </tr>
+                         <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Stalls and Seminars at Campus</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Social Media Engagements</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                        </tr>
+                         <tr class="border-b border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Brand Specific Reels, Posts, Stories</th>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center text-green-400 text-lg">✔</td>
+                            <td class="px-6 py-4 text-center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Sponsors -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">Our Past Sponsors</h2>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <img src="images/sponsors/purnam.png" alt="Purnam" class="h-12 sponsor-logo reveal" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/000000?text=Purnam';">
+                <img src="images/sponsors/nivia.png" alt="Nivia" class="h-12 sponsor-logo reveal" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/000000?text=Nivia';">
+                <img src="images/sponsors/decathlon.png" alt="Decathlon" class="h-12 sponsor-logo reveal" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/000000?text=Decathlon';">
+                <img src="images/sponsors/epigamia.png" alt="Epigamia" class="h-12 sponsor-logo reveal" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/000000?text=Epigamia';">
+                <img src="images/sponsors/marv.png" alt="Marv" class="h-12 sponsor-logo reveal" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/000000?text=Marv';">
+                <img src="images/sponsors/aarambh.png" alt="Aarambh Clothing" class="h-16 sponsor-logo reveal" onerror="this.onerror=null;this.src='https://placehold.co/150x50/ffffff/000000?text=Aarambh';">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white reveal">Contact Us</h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">Let's collaborate and make an impact together.</p>
+            <div class="mt-8 text-lg text-white space-y-4 reveal">
+                <p>Tarun Vardhaman: <a href="tel:9594110038" class="hover:text-blue-400">9594110038</a></p>
+                <p>Tushya Vyas: <a href="tel:9930612802" class="hover:text-blue-400">9930612802</a></p>
+                <p>Pratham Fariya: <a href="tel:9004970497" class="hover:text-blue-400">9004970497</a></p>
+                <p>Email: <a href="mailto:saeinida.djsce14@gmail.com" class="hover:text-blue-400">saeinida.djsce14@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', reveal);
+    </script>
+
+</body>
+</html>

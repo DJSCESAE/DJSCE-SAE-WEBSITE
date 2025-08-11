@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Karting - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-karting {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video-karting {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .karting-font {
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 1px;
+        }
+        .animated-text-red {
+            background: linear-gradient(90deg, #ef4444, #f87171, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-red 5s ease infinite;
+        }
+        @keyframes gradient-animation-red {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card, .department-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS KARTING.png" alt="DJS Karting Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 karting-font text-xl">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#departments" class="text-gray-300 hover:text-white transition">Departments</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-karting h-screen flex items-center justify-center text-center">
+        <video autoplay loop muted playsinline id="hero-video-karting">
+            <source src="videos/DJSK Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider reveal karting-font">
+                <span class="text-red-500">KARTING</span> WITH PURPOSE, <span class="text-red-500">WINNING</span> WITH PRIDE
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal karting-font">About DJS Karting</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS KARTING/Photo 1.JPG" alt="DJS Karting" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Karting';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Karting India, our college’s official go-kart team, operates like a real-world motorsport engineering unit, taking on technical challenges, adhering to strict regulations, and driving innovation at every stage. With a strong team of 30+ dedicated members, we design, fabricate, and race high-performance go-karts, combining engineering excellence with competitive ambition.</p>
+                    <p class="text-gray-300 text-lg">Majorly all components are meticulously built in-house, reflecting our commitment to performance, safety, and creativity. We proudly represent our institution at prestigious competitions like the Go Kart Design Challenge (GKDC), where we strive to secure podium finishes and uphold our legacy at the national level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal karting-font">Our Departments</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 karting-font">Chassis</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 karting-font">Transmission</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 karting-font">Brakes</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 karting-font">Steering</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 karting-font">ESI</h3>
+                </div>
+                 <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 karting-font">Marketing & Creatives</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal karting-font">Our Achievements</h2>
+            </div>
+            <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievements will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal karting-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS KARTING/Photo 1.JPG" alt="DJS Karting Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS KARTING/Photo 2.jpg" alt="DJS Karting Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS KARTING/Photo 3.jpg" alt="DJS Karting Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS KARTING/Photo 4.heic" alt="DJS Karting Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS KARTING/Photo 5.jpg" alt="DJS Karting Gallery Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+             <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/djskartingindia/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            </div>
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const achievementsData = [
+            { year: 'Go-Kart Design Challenge 2025', details: ['Autocross: 2nd', 'Skidpad: 3rd', 'Design Evaluation: 4th', 'Cost Report: 4th', 'Acceleration Test: 5th', 'Business Plan: 6th', 'Endurance Race: 7th'] },
+            { year: 'Quick Silver Piston Cup 2025', details: ['Overall Winners (AIR 1)', 'Design Evaluation: 1st', 'Drift Challenge: 1st', 'Endurance Race: 2nd'] }
+        ];
+
+        function populateAchievements() {
+            const container = document.getElementById('achievements-grid');
+            achievementsData.forEach(item => {
+                const card = `
+                    <div class="achievement-card p-6 rounded-lg reveal">
+                        <h3 class="text-xl font-bold text-white mb-3 heading-font">${item.year}</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            ${item.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAchievements();
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

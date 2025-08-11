@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Racing - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-racing {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video-racing {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .formula-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .animated-text-red {
+            background: linear-gradient(90deg, #ef4444, #f87171, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-red 5s ease infinite;
+        }
+        @keyframes gradient-animation-red {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card, .study-card, .department-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #ef4444;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .achievement-card:hover, .study-card:hover, .department-card:hover {
+             transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.1), 0 4px 6px -2px rgba(239, 68, 68, 0.05);
+        }
+        .team-member-card {
+            background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS RACING.png" alt="DJS Racing Logo" class="h-10">
+                <h1 class="text-2xl font-bold text-white formula-font">DJS <span class="animated-text-red">RACING</span></h1>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 formula-font">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#departments" class="text-gray-300 hover:text-white transition">Departments</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="#study-material" class="text-gray-300 hover:text-white transition">Study Material</a>
+                <a href="#team-members" class="text-gray-300 hover:text-white transition">Team</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-racing h-screen flex items-center justify-center text-center">
+        <video autoplay loop muted playsinline id="hero-video-racing">
+            <source src="videos/sae-orientation.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-wider reveal formula-font">
+                <span class="text-white">NEVER</span> <span class="text-red-500">STAGNATE</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal formula-font">About DJS Racing</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS RACING/Photo 1.jpg" alt="DJS Racing Car" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Racing';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Racing is the official formula student team of D. J. Sanghvi College of Engineering. We design, build, and refine electric formula-style race cars from the ground up, combining technical excellence with bold engineering vision.</p>
+                    <p class="text-gray-300 text-lg">Each year, we proudly represent India at premier competitions like Formula Bharat, Formula Student Germany, and FS Austria. From vehicle dynamics and aerodynamics to powertrain and systems integration, we engineer every component with precision, passion, and purpose — carrying the spirit of Indian innovation into the world of Formula Student motorsport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal formula-font">Our Achievements</h2>
+            </div>
+            <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievements will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal formula-font">Our Departments</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Structural</h3>
+                    <p class="text-gray-400">Deals with the design, analysis, and manufacturing of the vehicle's framework, composites, and aerodynamic parts to ensure driver safety and maximize speed.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Brakes</h3>
+                    <p class="text-gray-400">Ensures the braking system and pedal assembly are safe, ergonomic, and capable of decelerating the vehicle reliably at its maximum possible rate.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Suspension & Steering</h3>
+                    <p class="text-gray-400">Controls the vehicle’s handling for safety and performance while ensuring driver comfort. The steering system allows for easy and precise maneuvering of the car.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Drivetrain</h3>
+                    <p class="text-gray-400">Responsible for transmitting power from our AC synchronous motor to the wheels through custom-designed components for a light, reliable, and smooth transmission.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Mechanical Integration</h3>
+                    <p class="text-gray-400">Designs and manufactures the accumulator container, integrates electronic components, and manages the thermal systems for the accumulator and motor.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Electronics</h3>
+                    <p class="text-gray-400">Manages the High Voltage (battery pack, BMS) and Low Voltage (safety circuits, ECU, DAQ) systems, all connected by a self-designed wire harness.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Driverless</h3>
+                    <p class="text-gray-400">Develops the autonomous vehicle systems, focusing on Perception, Estimation & Planning, and Controls to enable the car to drive itself around the track.</p>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Marketing</h3>
+                    <p class="text-gray-400">Handles all non-technical tasks including social media, public relations, and obtaining sponsorships to fund the project, developing creative and sales skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal formula-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 1.jpg" alt="DJS Racing Team Photo 1"></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 2.jpg" alt="DJS Racing Team Photo 2"></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 3.jpg" alt="DJS Racing Team Photo 3"></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 4.jpg" alt="DJS Racing Team Photo 4"></div>
+                </div>
+                <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 5.jpg" alt="DJS Racing Team Photo 5"></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 6.jpg" alt="DJS Racing Team Photo 6"></div>
+                </div>
+                 <div class="grid gap-4">
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/DSC_5494.JPG" alt="DJS Racing Team Photo 7"></div>
+                    <div class="reveal"><img class="h-auto max-w-full rounded-lg" src="images/DJS RACING/Photo 2.jpg" alt="DJS Racing Team Photo 8"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Material Section -->
+    <section id="study-material" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal formula-font">Study Material</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">Explore the technical resources and documentation from our key departments.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="study-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Driverless Systems</h3>
+                    <ul class="space-y-2">
+                        <li><a href="study material/racingstudy/Driverless/Autonomous_Vision_of_Driverless_car_in_Machine_Lea.pdf" download class="text-red-400 hover:underline">Autonomous Vision PDF</a></li>
+                        <li><a href="study material/racingstudy/Driverless/Driverless Reading Material.pdf" download class="text-red-400 hover:underline">Reading Material PDF</a></li>
+                    </ul>
+                </div>
+                <div class="study-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Powertrain</h3>
+                    <ul class="space-y-2">
+                        <li><a href="study material/racingstudy/Powertrain/summary_battery_specifications.pdf" download class="text-red-400 hover:underline">Battery Specifications PDF</a></li>
+                        <li><a href="study material/racingstudy/Powertrain/Powertrain study topics.docx" download class="text-red-400 hover:underline">Study Topics DOCX</a></li>
+                    </ul>
+                </div>
+                <div class="study-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 formula-font">Vehicle Dynamics</h3>
+                    <ul class="space-y-2">
+                        <li><a href="study material/racingstudy/Vehicle Dynamics/Spaceframe Chassis.pdf" download class="text-red-400 hover:underline">Spaceframe Chassis PDF</a></li>
+                        <li><a href="study material/racingstudy/Vehicle Dynamics/READ_ME.docx" download class="text-red-400 hover:underline">Read Me DOCX</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section id="team-members" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal formula-font">Meet the Team</h2>
+            </div>
+            <div id="team-members-grid" class="space-y-10">
+                <!-- Leadership Row -->
+                <div class="flex flex-wrap justify-center gap-8"></div>
+                <!-- Heads Row -->
+                <div class="flex flex-wrap justify-center gap-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.djs-racing.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    <span class="sr-only">Website</span>
+                </a>
+                <a href="https://www.instagram.com/djs_racing/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/company/djs-racing/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+            </div>
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const achievementsData = [
+            { year: 2025, details: ['4th Overall @ FB', '4th in Cost', '6th in Design Finalists', '16th in Business Plan'] },
+            { year: 2024, details: ['8th Overall @ FB', '5th in Cost', '5th in Business Plan', '11th in Design'] },
+            { year: 2023, details: ['5th Overall @ FB', '2nd in Cost', '5th in Design', '9th in Business Plan'] },
+            { year: 2022, details: ['First fully-electric season', '4th Overall @ FB', '4th in Cost', '5th in Design', '2nd in Business Plan'] },
+            { year: 2021, details: ['CV: 2nd Overall, 2nd in Design', 'EV: 5th Overall, 2nd in Design'] },
+            { year: 2020, details: ['1st in Cost Event at FB', 'Best Powertrain Design at FSEV'] },
+            { year: 2019, details: ['Only Indian team to compete with 2 cars in one year', '4th Overall in EV & CV at FB', '“Never Give Up” Award at FSG'] },
+            { year: 2018, details: ['1st in Cost Event (both FSAE & FB)', '1st in Design Event', '1st in Skidpad'] },
+            { year: 2017, details: ['1st in Design Event @ FB'] }
+        ];
+
+        const teamMembers = [
+            { name: 'Harshil Doshi', role: 'Captain', img: 'harshil.jpg' },
+            { name: 'Krishna Desai', role: 'Team Manager', img: 'krishna.JPG' },
+            { name: 'Dhruv Gosar', role: 'VD Head', img: 'gosar.JPG' },
+            { name: 'Samar Mhetre', role: 'PT Elex HV Head', img: 'samar.jpg' },
+            { name: 'Kunj Modi', role: 'PT Elex LV Head', img: 'kunj.JPG' },
+            { name: 'Vashish Ingale', role: 'PT Mech Head', img: 'vashish.jpg' }
+        ];
+
+        function populateAchievements() {
+            const container = document.getElementById('achievements-grid');
+            achievementsData.forEach(item => {
+                const card = `
+                    <div class="achievement-card p-6 rounded-lg reveal">
+                        <h3 class="text-2xl font-bold text-white mb-3 formula-font">${item.year}</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            ${item.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function populateTeamMembers() {
+            const container = document.getElementById('team-members-grid');
+            const leadershipRow = container.children[0];
+            const headsRow = container.children[1];
+            
+            teamMembers.forEach(member => {
+                const card = `
+                    <div class="team-member-card text-center reveal rounded-lg overflow-hidden w-full max-w-xs">
+                        <img src="images/RACING MEMBERS/${member.img}" alt="${member.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=${member.name.charAt(0).toUpperCase()}';">
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold text-white formula-font">${member.name}</h3>
+                            <p class="text-red-400 text-sm">${member.role}</p>
+                        </div>
+                    </div>
+                `;
+                if (member.role === 'Captain' || member.role === 'Team Manager') {
+                    leadershipRow.innerHTML += card;
+                } else {
+                    headsRow.innerHTML += card;
+                }
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAchievements();
+            populateTeamMembers();
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

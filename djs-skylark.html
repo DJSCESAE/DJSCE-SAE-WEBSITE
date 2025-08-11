@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Skylark - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-skylark {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/DJS SKYLARK/PXL_20250406_202548606.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .heading-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .animated-text-blue {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-blue 5s ease infinite;
+        }
+        @keyframes gradient-animation-blue {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS SKYLARK.png" alt="DJS Skylark Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 heading-font text-lg">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-skylark h-screen flex items-center justify-center text-center">
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-6xl md:text-8xl font-black uppercase tracking-wider reveal heading-font">
+                <span class="text-white">DJS</span> <span class="animated-text-blue">SKYLARK</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal heading-font">About DJS Skylark</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS SKYLARK/skylark_2024.jpg" alt="DJS Skylark Aircraft" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Skylark';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Skylark, our college's official aero design team, operates like a real-world aerospace engineering firm — taking on real challenges, real constraints, and delivering real innovation. We design, build, and perfect radio-controlled aircraft from scratch, blending technical precision with creative flair.</p>
+                    <p class="text-gray-300 text-lg">We proudly represent India at the prestigious SAE Aero Design international collegiate competition held annually in the USA — where our ideas take flight on a global stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal heading-font">Our Achievements</h2>
+            </div>
+            <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievements will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal heading-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SKYLARK/DSC_0401.jpg" alt="DJS Skylark Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SKYLARK/DSC_0458.jpg" alt="DJS Skylark Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SKYLARK/PXL_20250406_202548606.jpg" alt="DJS Skylark Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SKYLARK/PXL_20250406_215648236.jpg" alt="DJS Skylark Gallery Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const achievementsData = [
+            { year: 2020, details: ['Micro Class: Mission Performance-2nd, Technical Presentation - 3rd, Overall Worldwide - 3rd', 'Regular Class: Technical Presentation - 9th, Asia Pacific Overall-4th'] },
+            { year: 2021, details: ['Micro Class: Design Report - 3rd, Overall Worldwide - 4th, Asia Pacific Overall 1st', 'Regular Class: Design Report - Ist, Technical Presentation - 3rd, Asia Pacific Overall - 1st'] },
+            { year: 2022, details: ['Micro Class: Design Report - 1st, Mission Performance-3rd, Overall Worldwide - 3rd', 'Regular Class: Design Report - 3rd, Mission Performance 3rd, Overall Worldwide - 3rd'] },
+            { year: 2023, details: ['Regular Class: Design Report -1st Worldwide, Technical Presentation Asia Pacific-1st, Overall Worldwide-9th', 'Micro Class: Design Report Worldwide- 1st, Technical Presentation Worldwide -5th, Overall Worldwide- 5th'] },
+            { year: 2024, details: ['Micro Class: Design Report Worldwide - 1st, Technical Presentation Worldwide - 3rd, Overall Worldwide- 6th', 'Regular Class: Design Report Worldwide - 2nd, Technical Presentation Worldwide - 4th, Overall Worldwide - 5th'] },
+            { year: 2025, details: ['Micro Class: Design Report Worldwide -5th, Oral Presentation Worldwide- 2nd, Overall Worldwide- 12th', 'Regular Class: Design Report Worldwide- 5th, Oral Presentation Worldwide- 2nd, Overall Worldwide- 8th', 'Advanced Class: Design Report Worldwide 11th, Oral Presentation Worldwide- 2nd, Overall Worldwide-7th'] }
+        ];
+
+        function populateAchievements() {
+            const container = document.getElementById('achievements-grid');
+            achievementsData.forEach(item => {
+                const card = `
+                    <div class="achievement-card p-6 rounded-lg reveal">
+                        <h3 class="text-xl font-bold text-white mb-3 heading-font">${item.year}</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            ${item.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAchievements();
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Helios - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-helios {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        #hero-video-helios {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .helios-font {
+            font-family: 'Exo 2', sans-serif;
+        }
+        .animated-text-yellow {
+            background: linear-gradient(90deg, #facc15, #fde047, #facc15);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-yellow 5s ease infinite;
+        }
+        @keyframes gradient-animation-yellow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card, .department-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #facc15;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS Helios.png" alt="DJS Helios Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 helios-font text-xl">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-helios flex items-center justify-center text-center">
+        <video autoplay loop muted playsinline id="hero-video-helios">
+            <source src="videos/DJS Helios.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider reveal helios-font">
+                DRIVING SUSTAINABILITY, POWERED BY THE SUN
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal helios-font">About DJS Helios</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS HELIOS/IMG-20250303-WA0067(1).jpg" alt="DJS Helios Vehicle" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Helios';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Helios India is the official solar electric vehicle team of Dwarkadas J. Sanghvi College of Engineering, Mumbai. Founded in 2016 as a final-year engineering project by four passionate B.E. students. With a strong team of 20+ dedicated members, we are proud to be Mumbai’s first student-run team committed to the design, development, and fabrication of high-performance solar-powered electric vehicles.</p>
+                    <p class="text-gray-300 text-lg">Our mission is to push the boundaries of green automotive technology while providing students with hands-on experience in engineering, innovation, and teamwork. Over the years, we have participated in numerous national and international competitions like (ESVC 3000, BSVC, IASC). At DJS Helios, we continue to strive for innovation, aiming to shape the future of solar electric mobility while upholding the values of teamwork, technical excellence, and environmental responsibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal helios-font">Our Achievements</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-card p-6 rounded-lg reveal">
+                    <h3 class="text-xl font-bold text-white mb-3 heading-font">Electric Solar Vehicle Championship (ESVC 3000) 2025</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Design Report: 4th rank (prelims)</li>
+                        <li>Innovation round: 6th rank</li>
+                        <li>B-Plan and Cost report: 9th rank</li>
+                        <li>Overall rank: 8th rank</li>
+                        <li>Won the Go Green-Future award</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal helios-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS HELIOS/IMG-20250303-WA0067(1).jpg" alt="DJS Helios Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS HELIOS/IMG-20250303-WA0068.jpg" alt="DJS Helios Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS HELIOS/IMG-20250303-WA0070.jpg" alt="DJS Helios Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS HELIOS/IMG-20250423-WA0047.jpg" alt="DJS Helios Gallery Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

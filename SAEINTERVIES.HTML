@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE Teams Interviews - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-interviews {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=Interviews');
+            background-size: cover;
+            background-position: center;
+        }
+        .animated-text {
+            background: linear-gradient(90deg, #ff2d2d, #ffc107, #2dff6a, #2d9cff, #ff2d2d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation 5s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .info-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #2d9cff;
+        }
+        .rule-card {
+            background-color: #1f2937;
+        }
+        .blacklist-card {
+            background-color: #372929;
+            border-left-color: #ef4444;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">SAE <span class="animated-text">INTERVIEWS</span></h1>
+            <nav class="hidden md:flex items-center space-x-8">
+                 <a href="#about-interviews" class="text-gray-300 hover:text-white transition">About</a>
+                 <a href="#guidelines" class="text-gray-300 hover:text-white transition">Guidelines</a>
+                 <a href="#registration" class="text-gray-300 hover:text-white transition">Register Now</a>
+                 <a href="#join-us" class="text-gray-300 hover:text-white transition">Join Us</a>
+                 <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-interviews h-screen flex items-center justify-center text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-wider reveal">Join the Legacy</h2>
+            <h3 class="text-2xl md:text-4xl font-bold mt-4 animated-text reveal">Your Engineering Journey Starts Here</h3>
+            <p class="text-lg md:text-xl text-gray-300 mt-8 max-w-3xl mx-auto reveal">Become a part of one of India's most accomplished student engineering societies. Register for the upcoming interviews and find your team.</p>
+            <a href="#registration" class="mt-12 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider transition duration-300 transform hover:scale-105 reveal">Register Now</a>
+        </div>
+    </section>
+
+    <!-- About the Interviews -->
+    <section id="about-interviews" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">About the Recruitment Drive</h2>
+            </div>
+            <div class="max-w-4xl mx-auto text-lg text-gray-300 space-y-6 reveal">
+                <p>SAE organizes a large-scale recruitment event, "Interview 2025," aimed at inducting enthusiastic and capable First-Year students into our 11 diverse technical teams. The event is a cornerstone of our commitment to identifying fresh talent and introducing them to the world of technical innovation, teamwork, and practical engineering experience.</p>
+                <p>Over three days, more than 300 students are interviewed across all classrooms on the 4th floor of the Mechanical Engineering department. This structured process allows our teams to assess not just the technical potential of applicants, but also their problem-solving skills and ability to collaborate.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="info-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-2">Dates</h3>
+                    <p class="text-gray-400">2nd to 4th March 2025</p>
+                </div>
+                <div class="info-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-2">Venue</h3>
+                    <p class="text-gray-400">4th Floor, Mechanical Dept.</p>
+                </div>
+                 <div class="info-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-2">Who Can Apply?</h3>
+                    <p class="text-gray-400">Primarily aimed at First-Year students from all departments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interview Guidelines -->
+    <section id="guidelines" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">Interview Guidelines</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <h3 class="text-3xl font-bold text-white mb-6">Interview Rules</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="rule-card p-4 rounded-lg">Applicants must upload a resume and final team preference order in the form.</li>
+                        <li class="rule-card p-4 rounded-lg">The resume must contain the candidate's name and photo, but NO contact information.</li>
+                        <li class="rule-card p-4 rounded-lg">Strictly dress in complete formal attire, including formal shoes.</li>
+                        <li class="rule-card p-4 rounded-lg">You are required to give interviews for your first 4 preferences.</li>
+                        <li class="rule-card p-4 rounded-lg">Bring at least 3 copies of your resume for each interview (minimum 12 total).</li>
+                        <li class="rule-card p-4 rounded-lg">If selected for your 1st preference, you must accept the position.</li>
+                        <li class="rule-card p-4 rounded-lg">You can only be part of one SAE or IETE team.</li>
+                    </ul>
+                     <div class="mt-8 p-6 rounded-lg info-card blacklist-card">
+                        <h4 class="text-2xl font-bold text-red-400 mb-3">Blacklisting Conditions</h4>
+                        <ul class="list-disc list-inside space-y-2 text-red-300">
+                            <li>Failure to attend interviews for all top four preferences.</li>
+                            <li>Attempting to contact any team before or after the interviews.</li>
+                            <li>Attempting to switch teams after selection.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-3xl font-bold text-white mb-6">How to Build a Resume</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="rule-card p-4 rounded-lg">Keep it to a single page. Use a simple, effective design from Canva or MS Word.</li>
+                        <li class="rule-card p-4 rounded-lg">Add your name in a large, bold font and include a clear, recent photo.</li>
+                        <li class="rule-card p-4 rounded-lg">Mention your education, skills, and familiarity with technical/creative software.</li>
+                        <li class="rule-card p-4 rounded-lg">Highlight personality traits, interests, projects, and any teamwork or volunteer experience.</li>
+                        <li class="rule-card p-4 rounded-lg">Be prepared to support everything on your resume. Do not lie or add irrelevant information.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white reveal">Interview Registration Form</h2>
+            </div>
+            <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-2xl reveal">
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="full-name" class="block text-gray-300 font-semibold mb-2">Full Name</label>
+                            <input type="text" id="full-name" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="phone-number" class="block text-gray-300 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" id="phone-number" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="sap-id" class="block text-gray-300 font-semibold mb-2">SAP ID</label>
+                            <input type="text" id="sap-id" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="year-of-study" class="block text-gray-300 font-semibold mb-2">Year of Study</label>
+                            <input type="text" id="year-of-study" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="division" class="block text-gray-300 font-semibold mb-2">Division</label>
+                            <input type="text" id="division" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="branch" class="block text-gray-300 font-semibold mb-2">Branch</label>
+                            <input type="text" id="branch" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        
+                        <!-- Team Preferences -->
+                        <div id="team-preferences" class="md:col-span-2"></div>
+                        
+                        <div>
+                            <label for="resume-link" class="block text-gray-300 font-semibold mb-2">Resume Link</label>
+                            <input type="url" id="resume-link" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="applied-iete" class="block text-gray-300 font-semibold mb-2">Applied for IETE Teams?</label>
+                            <select id="applied-iete" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                                <option>Select</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                         <div>
+                            <label for="attended-orientation" class="block text-gray-300 font-semibold mb-2">Attended Orientation?</label>
+                            <select id="attended-orientation" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                                <option>Select</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                         <div>
+                            <label for="email-address" class="block text-gray-300 font-semibold mb-2">Email Address</label>
+                            <input type="email" id="email-address" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                        </div>
+                         <div class="md:col-span-2">
+                            <label for="acknowledge" class="block text-gray-300 font-semibold mb-2">Acknowledge Final Preferences</label>
+                            <select id="acknowledge" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                                <option>Select</option>
+                                <option>I acknowledge that these are my final preferences.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider transition duration-300 transform hover:scale-105">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join-us" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white reveal">Join Our Community</h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">Get the latest updates and ask your questions in our official WhatsApp groups.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-6 reveal">
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider transition duration-300 transform hover:scale-105">Mechanical Interviews Group</a>
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider transition duration-300 transform hover:scale-105">Non-Mechanical Interviews Group</a>
+            </div>
+            <div class="mt-12 text-lg text-white space-y-2 reveal">
+                <p class="font-bold">For any queries, contact:</p>
+                <p>Tarun Vardhaman: <a href="tel:9594110038" class="hover:text-blue-400">9594110038</a></p>
+                <p>Shrushti Jain: <a href="tel:7977167233" class="hover:text-blue-400">7977167233</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const teamsData = [
+            { name: 'DJS Racing' }, { name: 'DJS Kronos' }, { name: 'DJS Skylark' }, { name: 'DJS Karting' }, { name: 'DJS Speedsters' }, { name: 'DJS Miles' }, { name: 'DJS Phoenix' }, { name: 'DJS Helios' }, { name: 'DJS Astra' }, { name: 'DJS Impulse' }, { name: 'DJS Quadcross' }, { name: 'DJS Robocon' }
+        ];
+
+        function populateTeamPreferences() {
+            const container = document.getElementById('team-preferences');
+            let preferencesHTML = '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">';
+            for(let i = 1; i <= 11; i++) {
+                preferencesHTML += `
+                    <div>
+                        <label for="team-pref-${i}" class="block text-gray-300 font-semibold mb-2">Team Preference ${i}</label>
+                        <select id="team-pref-${i}" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-blue-500">
+                            <option>Select a team</option>
+                            ${teamsData.map(team => `<option>${team.name}</option>`).join('')}
+                        </select>
+                    </div>
+                `;
+            }
+            preferencesHTML += '</div>';
+            container.innerHTML = preferencesHTML;
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            populateTeamPreferences();
+            reveal();
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJSCE SAE - Society of Automotive Engineers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .heading-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .team-card, .member-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover, .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04);
+        }
+        .team-card img {
+            background-color: #ffffff; 
+            object-fit: contain;
+            padding: 1rem;
+            height: 12rem;
+        }
+        .event-card {
+             background-color: #1a1a1a;
+        }
+        .animated-text {
+            background: linear-gradient(90deg, #ff2d2d, #ffc107, #2dff6a, #2d9cff, #ff2d2d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation 5s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .member-card img {
+            border: 4px solid #333;
+        }
+        .member-card:hover img {
+            border-color: #ff2d2d;
+        }
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+        .slider-track {
+            display: flex;
+            width: calc(300px * 26); /* image_width * number_of_images * 2 */
+            animation: scroll 25s linear infinite;
+        }
+        .slide {
+            width: 500px;
+            height: 400px;
+            flex-shrink: 0;
+            padding: 0 10px;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 13)); } /* -image_width * number_of_images */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS SAE.png" alt="DJSCE SAE Logo" class="h-10">
+                <h1 class="text-2xl font-bold text-white heading-font">DJSCE <span class="animated-text">SAE</span></h1>
+            </a>
+            <nav class="hidden md:flex space-x-8 heading-font">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#teams" class="text-gray-300 hover:text-white transition">Teams</a>
+                <a href="#our-team" class="text-gray-300 hover:text-white transition">Our Team</a>
+                <a href="#events" class="text-gray-300 hover:text-white transition">Events</a>
+                <a href="mechaverse-marketing-page.html" class="font-bold text-blue-400 hover:text-blue-300 transition">Mechaverse 2025</a>
+                <a href="SAEINTERVIES.HTML" class="text-gray-300 hover:text-white transition">SAE INTERVIEWS 2025</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+            </nav>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section h-screen">
+        <video autoplay loop muted playsinline id="hero-video">
+            <source src="videos/hero-video.mp4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal heading-font">About DJSCE SAE</h2>
+                <h3 class="text-2xl mt-2 animated-text reveal heading-font">Engineering the Future</h3>
+                <p class="text-gray-300 mt-4 max-w-3xl mx-auto reveal">
+                    Driven by passion and defined by innovation, DJSCE SAE is the sole automotive fraternity of the college, serving as a dynamic, student-led body committed to fostering innovation and hands-on experience. We provide an exceptional platform for students across all departments to engage in diverse domains like Aero Design, Vehicle Dynamics, and Electric Vehicles. The committee manages over 11 specialized technical teams—from Race Cars to UAVs—that have won numerous national and international competitions. Beyond projects, DJSCE SAE is dedicated to spreading automotive knowledge through a wide range of seminars and workshops, connecting students with industry experts to deepen their technical expertise.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal slider-container">
+                    <div id="mission-slider-track" class="slider-track">
+                        <!-- Images will be dynamically inserted here by JavaScript -->
+                    </div>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-3xl font-bold text-white mb-4 heading-font">Our Mission</h3>
+                    <p class="text-gray-400 mb-6">To provide an exceptional platform for students to explore and engage in various domains such as Aero Design, Vehicle Dynamics, Mechanical Systems Design, Electric Vehicles, and more. We manage and coordinate over 11 specialized technical teams, turning theoretical concepts into practical applications.</p>
+                    <div class="flex space-x-8">
+                        <div>
+                            <p class="text-4xl font-bold animated-text heading-font">11+</p>
+                            <p class="text-gray-400">Technical Teams</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold animated-text heading-font">50+</p>
+                            <p class="text-gray-400">Competitions</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold animated-text heading-font">300+</p>
+                            <p class="text-gray-400">Active Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal heading-font">Meet Our Teams</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">From the racetrack to the skies, our teams are building the future of mobility.</p>
+            </div>
+            <div id="teams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Teams will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section id="our-team" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal heading-font">Meet the Committee</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">The driving force behind DJSCE SAE's success.</p>
+            </div>
+            
+            <!-- Core Committee -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-white text-center mb-12 reveal heading-font">Core Committee 2024-25</h3>
+                
+                <!-- Row 1: Chairperson & Co-Chairperson -->
+                <div class="flex flex-wrap justify-center gap-10 mb-10">
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg w-full max-w-xs">
+                        <img src="images/members/tarun.png" alt="Tarun Vardhaman Chelamallu" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Tarun Vardhaman Chelamallu</h3>
+                        <p class="text-gray-400 animated-text">Chairperson</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg w-full max-w-xs">
+                        <img src="images/members/Shrushti.png" alt="Shrushti Jain" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Shrushti Jain</h3>
+                        <p class="text-gray-400 animated-text">Co-Chairperson</p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Vice-Chairpersons -->
+                <div class="flex flex-wrap justify-center gap-10 mb-10">
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg w-full max-w-xs">
+                        <img src="images/members/Abhinav.png" alt="Abhinav Verma" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Abhinav Verma</h3>
+                        <p class="text-gray-400 animated-text">Vice-Chairperson</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg w-full max-w-xs">
+                        <img src="images/members/dhariya.png" alt="Dhairya Dholakia" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Dhairya Dholakia</h3>
+                        <p class="text-gray-400 animated-text">Vice-Chairperson</p>
+                    </div>
+                </div>
+
+                <!-- Rest of Core Committee -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/Shrirang.png" alt="Shrirang Deshmukh" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Shrirang Deshmukh</h3>
+                        <p class="text-gray-400 animated-text">Secretary</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/Titthi.png" alt="Titthi Harsh" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Titthi Harsh</h3>
+                        <p class="text-gray-400 animated-text">Secretary</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/heer.png" alt="Heer Sanghavi" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Heer Sanghavi</h3>
+                        <p class="text-gray-400 animated-text">Secretary</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/Moksh.png" alt="Moksh Vakharia" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Moksh Vakharia</h3>
+                        <p class="text-gray-400 animated-text">Joint Secretary</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/Nirmit.png" alt="Nirmit Pokale" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Nirmit Pokale</h3>
+                        <p class="text-gray-400 animated-text">Joint Secretary</p>
+                    </div>
+                     <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/rahul.png" alt="Rahul Gondhiya" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Rahul Gondhiya</h3>
+                        <p class="text-gray-400 animated-text">Joint Secretary</p>
+                    </div>
+                     <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/Pratham.png" alt="Pratham Fariya" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Pratham Fariya</h3>
+                        <p class="text-gray-400 animated-text">Treasurer</p>
+                    </div>
+                     <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/Abdullah.png" alt="Abdullah Ghojariya" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Abdullah Ghojariya</h3>
+                        <p class="text-gray-400 animated-text">Logistics Head</p>
+                    </div>
+                     <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/darsh.png" alt="Darsh Shah" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Darsh Shah</h3>
+                        <p class="text-gray-400 animated-text">Events Head</p>
+                    </div>
+                     <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/tushya.png" alt="Tushya Vyas" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Tushya Vyas</h3>
+                        <p class="text-gray-400 animated-text">Marketing & PR Head</p>
+                    </div>
+                    <div class="member-card text-center reveal bg-gray-900 p-6 rounded-lg">
+                        <img src="images/members/vedant.png" alt="Vedant Khade" class="w-40 h-40 mx-auto rounded-full object-cover mb-4" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333333/ffffff?text=Photo';">
+                        <h3 class="text-xl font-bold text-white heading-font">Vedant Khade</h3>
+                        <p class="text-gray-400 animated-text">Technical Head</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal heading-font">Events & Workshops</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">We believe in sharing knowledge and fostering a community of learners and innovators.</p>
+            </div>
+            <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Events will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white reveal heading-font">Get In Touch</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">Have questions or want to collaborate? We'd love to hear from you.</p>
+            </div>
+            <div class="max-w-xl mx-auto bg-gray-900 p-8 rounded-lg shadow-2xl reveal">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-300 font-bold mb-2">Name</label>
+                        <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-red-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-300 font-bold mb-2">Email</label>
+                        <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-red-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-300 font-bold mb-2">Message</label>
+                        <textarea id="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded py-2 px-3 text-white focus:outline-none focus:border-red-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider transition duration-300 transform hover:scale-105">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/djsce_sae/?hl=en" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/company/sae-djsce/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+            </div>
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+            <p class="mt-2">Dwarkadas J. Sanghvi College of Engineering, Vile Parle (W), Mumbai</p>
+        </div>
+    </footer>
+
+    <script>
+        const missionImages = [
+            'DJSR.JPG', 'IMG_3299.JPG', 'IMG-20240616-WA0007.jpg', 'skylark_2024.jpg', 
+            'WhatsApp Image 2025-08-03 at 16.02.31_18406091.jpg', 'WhatsApp Image 2025-08-03 at 16.02.31_a0652af4.jpg', 
+            'WhatsApp Image 2025-08-03 at 16.02.32_cc52d409.jpg', 
+            'DJS KRONOS 🤮.jpg', 'DJS MILES INDIA.jpg', 'Djs Speedsters.jpg', 'djs_impulse_rocket.png'
+        ];
+
+        const teamsData = [
+            { name: 'DJS Racing', desc: 'The official formula student team of D. J. Sanghvi College of Engineering...', link: 'djs-racing-page.html', img: 'images/logos/DJS RACING.png', achievements: ['5th Overall @ FB 2023', '4th Overall @ FB 2022', '2nd Overall in CV @ FB 2021'] },
+            { name: 'DJS Kronos', desc: 'Official BAJA SAE off-road racing team...', link: 'djs-kronos.html', img: 'images/logos/DJS KRONOS.png', achievements: ['1st in Sales @ A-BAJA SAE INDIA 2024', '1st in Design @ ATVC INDIA 2025'] },
+            { name: 'DJS Skylark', desc: "Our college's official aero design team...", img: 'images/logos/DJS SKYLARK.png', achievements: ['Overall Worldwide Ranks @ SAE Aero Design West 2025: Regular (8th), Advanced (7th), Micro (12th)'] },
+            { name: 'DJS Karting', desc: 'Our official go-kart team...', img: 'images/logos/DJS KARTING.png', achievements: ['Overall Winners (AIR 1) @ Quick Silver Piston Cup 2025', '2nd in Autocross @ GKDC 2025'] },
+            { name: 'DJS Speedsters', desc: "The official E-Superbike team...", img: 'images/logos/DJS SPEEDSTERS.png', achievements: ['AIR 3 Overall in EV Category @ FMAE MotoStudent 2024', 'AIR 1 in Acceleration & Autocross'] },
+            { name: 'DJS Miles', desc: 'Official electric super-mileage team...', img: 'images/logos/DJS MILES.png', achievements: ['AIR-2 in battery electric prototype @ Shell Eco Marathon 2024'] },
+            { name: 'DJS Phoenix', desc: 'A passionate team of innovators united by our love for drones...', img: 'images/logos/DJS PHOENIX.png', achievements: ['2nd Place @ DRONE DEXTERITY 2025', '2nd Runner-up @ AEROGCS GLOBAL 2024'] },
+            { name: 'DJS Helios', desc: "Mumbai's first student-run team...", img: 'images/logos/DJS Helios.png', achievements: ['Won the Go Green-Future award @ ESVC 2025', 'Overall Rank: 8th @ ESVC 2025'] },
+            { name: 'DJS Astra', desc: 'The official combat robotics team...', img: 'images/logos/DJS ASTRA.png', achievements: ['5th Position Overall @ Mindbend, SVNIT Surat 2025', 'Expanded into Robosoccer in 2025'] },
+            { name: 'DJS Impulse', desc: 'The official High-Power Rocketry team...', img: 'images/logos/DJS IMPULSE.png', achievements: ['Project NIMBUS to be launched in July 2025'] },
+            { name: 'DJS Quadcross', desc: 'Official ATV team...', img: 'images/logos/DJS QUADCROSS.png', achievements: ['1st Place in Concept Design 2024'] },
+            { name: 'DJS Robocon', desc: 'Designing and building robots to compete in the ABU Robocon competition.', img: 'images/logos/DJS ROBOCON.png', achievements: ['Participating in national and international robotics competitions.'] }
+        ];
+
+        const eventsData = [
+            { name: 'Mechaverse 2024', desc: 'The Mechanical Department\'s official tech fest with a Motorsports theme, featuring competitions, challenges, and workshops.', img: 'images/event-mechaverse.jpg' },
+            { name: 'FE Orientations 2025', desc: 'Annual orientation to introduce first-year students to the world of SAE and its 11 dynamic teams.', img: 'images/event-orientation.jpg' },
+            { name: 'Interview 2025', desc: 'A large-scale recruitment drive to induct first-year students into our diverse technical teams.', img: 'images/event-interview.jpg' },
+            { name: 'Aeromodelling Workshop', desc: 'Hands-on training in aircraft design, aerodynamics, and flight testing, hosted by DJS Skylark.', img: 'images/event-aeromodelling.jpg' },
+            { name: 'TechExpo 2025', desc: 'Showcasing team-built vehicles and innovations with a "light and thunder" theme.', img: 'images/event-techexpo.jpg' },
+            { name: 'Seminar Series', desc: 'Regular seminars on topics like FEA, Entrepreneurship, and Solar Energy with industry experts.', img: 'images/event-seminar.jpg' }
+        ];
+
+        function populateTeams() {
+            const container = document.getElementById('teams-grid');
+            container.innerHTML = '';
+            teamsData.forEach(team => {
+                const isClickable = team.link ? `href="${team.link}"` : '';
+                const cardContent = `
+                    <div class="team-card bg-gray-900 rounded-lg overflow-hidden reveal h-full flex flex-col">
+                        <img src="${team.img}" alt="${team.name}" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/ffffff?text=Logo+Not+Found';">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-white mb-2 heading-font">${team.name}</h3>
+                            <p class="text-gray-400 mb-4 flex-grow">${team.desc}</p>
+                            <div class="border-t border-gray-700 pt-4 mt-auto">
+                                <h4 class="font-semibold text-white mb-2 heading-font">Key Achievements:</h4>
+                                <ul class="list-disc list-inside text-gray-400 text-sm">
+                                    ${team.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                if(isClickable) {
+                    container.innerHTML += `<a ${isClickable}>${cardContent}</a>`;
+                } else {
+                    container.innerHTML += cardContent;
+                }
+            });
+        }
+
+        function populateEvents() {
+            const container = document.getElementById('events-grid');
+            container.innerHTML = '';
+            eventsData.forEach(event => {
+                const card = `
+                    <div class="event-card rounded-lg overflow-hidden reveal">
+                        <img src="${event.img}" alt="${event.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Image+Not+Found';">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2 heading-font">${event.name}</h3>
+                            <p class="text-gray-400">${event.desc}</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+        
+        function populateMissionSlider() {
+            const track = document.getElementById('mission-slider-track');
+            const images = [...missionImages, ...missionImages]; // Duplicate images for seamless loop
+            images.forEach(imgSrc => {
+                const slide = document.createElement('div');
+                slide.classList.add('slide');
+                const img = document.createElement('img');
+                img.src = `images/ABOUT US IMG/${imgSrc}`;
+                slide.appendChild(img);
+                track.appendChild(slide);
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateTeams();
+            populateEvents();
+            populateMissionSlider();
+            reveal(); 
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

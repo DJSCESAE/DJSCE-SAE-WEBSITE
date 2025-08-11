@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Miles - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-miles {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video-miles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .miles-font {
+            font-family: 'Exo 2', sans-serif;
+        }
+        .animated-text-green {
+            background: linear-gradient(90deg, #4ade80, #86efac, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-green 5s ease infinite;
+        }
+        @keyframes gradient-animation-green {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card, .department-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #4ade80;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS MILES.png" alt="DJS Miles Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 miles-font text-xl">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#departments" class="text-gray-300 hover:text-white transition">Departments</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-miles h-screen flex items-center justify-center text-center">
+        <video autoplay loop muted playsinline id="hero-video-miles">
+            <source src="videos/Miles.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider reveal miles-font">
+                Engineering is all about Efficiency, So is Our Vehicle
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal miles-font">About DJS Miles</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS MILES/20240706_162031.jpg" alt="DJS Miles Vehicle" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Miles';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Miles is the official super-mileage vehicle team of Dwarkadas J. Sanghvi College of Engineering, competing in Shell Eco Marathon. We conceptualize, design and manufacture electric vehicles with the ultimate goal of achieving the highest possible mileage.</p>
+                    <p class="text-gray-300 text-lg">Additionally, we conduct drives and campaigns aimed at promoting a sustainable future. We are the first team to entirely manufacture a chassis using carbon-fibre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal miles-font">Our Departments</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 miles-font">Chassis</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 miles-font">Suspension, Steering & Brakes</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 miles-font">Electronics & Transmission</h3>
+                </div>
+                 <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 miles-font">Marketing & Creatives</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal miles-font">Our Achievements</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="achievement-card p-6 rounded-lg reveal">
+                    <h3 class="text-xl font-bold text-white mb-3 heading-font">Shell Eco Marathon 2024</h3>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>AIR-2 in battery electric prototype</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal miles-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/2024-07-04 08.07.47.jpeg" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/2024-07-04 13.59.01.jpeg" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/2024-07-06 13.41.38.jpeg" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/20240706_162031.jpg" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/IMG_3018.HEIC" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/IMG_3174.JPEG" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/IMG-20240707-WA0117.jpg" alt="DJS Miles Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/2024-07-02 13.47.40 (1).jpeg" alt="DJS Miles Gallery Image">
+                 <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS MILES/2024-07-03 15.38.54 (1).jpeg" alt="DJS Miles Gallery Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

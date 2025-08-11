@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJS Speedsters - DJSCE SAE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-speedsters {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video-speedsters {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .speedsters-font {
+            font-family: 'Russo One', sans-serif;
+            letter-spacing: 1px;
+        }
+        .animated-text-yellow {
+            background: linear-gradient(90deg, #facc15, #fde047, #facc15);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-animation-yellow 5s ease infinite;
+        }
+        @keyframes gradient-animation-yellow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .achievement-card, .department-card {
+            background-color: #1a1a1a;
+            border-left: 4px solid #facc15;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logos/DJS SPEEDSTERS.png" alt="DJS Speedsters Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 speedsters-font text-xl">
+                <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
+                <a href="#departments" class="text-gray-300 hover:text-white transition">Departments</a>
+                <a href="#achievements" class="text-gray-300 hover:text-white transition">Achievements</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a>
+                <a href="SAEOFFICIAL.HTML" class="text-gray-300 hover:text-white transition font-bold">← Back to DJSCE SAE</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-speedsters h-screen flex items-center justify-center text-center">
+        <video autoplay loop muted playsinline id="hero-video-speedsters">
+            <source src="videos/Speedsters.MP4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider reveal speedsters-font">
+                #Exhilarating_Electrically
+            </h2>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal speedsters-font">About DJS Speedsters</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <img src="images/DJS SPEEDSTER/speedsters_teamphoto1.jpeg" alt="DJS Speedsters" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=DJS+Speedsters';">
+                </div>
+                <div class="reveal">
+                    <p class="text-gray-300 text-lg mb-6">DJS Speedsters is the official E-Superbike team of D. J. Sanghvi College of Engineering, founded in 2017 by four passionate bike enthusiasts with a shared vision to build something revolutionary. What began as a small initiative has now evolved into a powerhouse of over 40+ dedicated engineering students who design and fabricate electric superbikes entirely from scratch.</p>
+                    <p class="text-gray-300 text-lg">In 2020, the team achieved a historic milestone by building India’s first collegiate electric superbike. Competing annually at FMAE MotoStudent India, held at Kari Motor Speedway and officially powered by KTM, the team embraces the spirit of real-world motorsports. From chassis and aerodynamics to electronics and drivetrain, every component is self-designed and manufactured by students. This hands-on approach has earned them national podiums and deep-rooted technical expertise. At DJS Speedsters, they don’t just build bikes—they accelerate electrically and ride with soul.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal speedsters-font">Our Departments</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 speedsters-font">Chassis</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 speedsters-font">Suspension, Steering & Brakes</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 speedsters-font">Transmission</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 speedsters-font">Aerodynamics</h3>
+                </div>
+                <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 speedsters-font">Electronics</h3>
+                </div>
+                 <div class="department-card p-6 rounded-lg reveal">
+                    <h3 class="text-2xl font-bold text-white mb-3 speedsters-font">Marketing & Creatives</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements -->
+    <section id="achievements" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal speedsters-font">Our Achievements</h2>
+            </div>
+            <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievements will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black text-white reveal speedsters-font">Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_photo1.jpeg" alt="DJS Speedsters Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_photo2.jpeg" alt="DJS Speedsters Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_photo3.jpeg" alt="DJS Speedsters Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_photo4.jpeg" alt="DJS Speedsters Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_photo5.jpeg" alt="DJS Speedsters Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_teamphoto1.jpeg" alt="DJS Speedsters Gallery Image">
+                <img class="h-auto max-w-full rounded-lg reveal" src="images/DJS SPEEDSTER/speedsters_teamphoto2.jpeg" alt="DJS Speedsters Gallery Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+             <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/djs.speedsters/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+            </div>
+            <p>&copy; 2025 DJSCE SAE. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const achievementsData = [
+            { year: 'FMAE MOTOSTUDENT INDIA SEASON 2 - 2023', details: ['AIR 1 - Overall in EV Category', 'AIR 1 - Endurance and Design Evaluation'] },
+            { year: 'FMAE MOTOSTUDENT INDIA SEASON 3 - 2024', details: ['AIR 1 - Acceleration and Autocross', 'AIR 2 - Endurance and Cost Evaluation', 'AIR 3 - Design Evaluation', 'AIR 3 - Overall in EV Category'] }
+        ];
+
+        function populateAchievements() {
+            const container = document.getElementById('achievements-grid');
+            achievementsData.forEach(item => {
+                const card = `
+                    <div class="achievement-card p-6 rounded-lg reveal">
+                        <h3 class="text-xl font-bold text-white mb-3 heading-font">${item.year}</h3>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1">
+                            ${item.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAchievements();
+            reveal();
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
